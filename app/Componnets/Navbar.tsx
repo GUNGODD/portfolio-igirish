@@ -5,7 +5,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
-import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
+import {
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
 
 export const navigationItems = [
@@ -30,12 +33,11 @@ export const navigationItems = [
 export const Navbar = () => {
   return (
     <>
-      <div className=" max-w-7xl mx-auto  px-4  md:px-8  py-5  grid-cols-12 ">
+      <div className=" max-w-7xl mx-auto  px-4  md:px-8  py-5 grid grid-cols-12 ">
         <div className=" col-span-6 flex md:col-span-3 ">
           <Link href="/">
             <h1 className=" text-3xl font-semibold">
-              <span className=" text-red-500">A</span>ditya{" "}
-              <span className="text-blue-500">Singh</span>
+              Aditya <span className="text-blue-500">Singh</span>
             </h1>
           </Link>
         </div>
@@ -46,12 +48,12 @@ export const Navbar = () => {
               {navigationItems.map((items, index) => (
                 <NavigationMenuItem key={index}>
                   <Link href={items} legacyBehavior passHref>
-                    <NavigationMenuList
+                    <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
                       {" "}
                       {items.name}
-                    </NavigationMenuList>
+                    </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               ))}
