@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
@@ -62,7 +63,9 @@ export const Navbar = () => {
           </NavigationMenu>{" "}
         </div>
 
-        <div className="flex items-center justify-end md:col-span-3 col-span-6 "></div>
+        <div className="flex items-center justify-end md:col-span-3 col-span-6 ">
+          <Button>Contact Me</Button>
+        </div>
       </div>
     </>
   );
