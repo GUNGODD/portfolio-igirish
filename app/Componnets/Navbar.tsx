@@ -10,6 +10,7 @@ import {
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
 
 export const navigationItems = [
   {
@@ -64,7 +65,10 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center justify-end md:col-span-3 col-span-6 ">
-          <Button>Contact Me</Button>
+          <Button className="hidden sm:block">Contact Me</Button>
+          <div>
+            <MobileMenu />
+          </div>
         </div>
       </div>
     </>
