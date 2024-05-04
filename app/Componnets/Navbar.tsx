@@ -7,9 +7,14 @@ export const Navbar = () => {
         <div className=" col-span-6 flex md:col-span-3 ">
           <Link href="/">
             <h1 className=" text-3xl font-semibold">
-              Aditya <span className="text-blue-500">Singh</span>
+              <span className=" text-red-500">A</span>ditya{" "}
+              <span className="text-blue-500">Singh</span>
             </h1>
           </Link>
+        </div>
+
+        <div className="hidden sm:flex  justify-center  items-center col-span-6">
+          {" "}
         </div>
       </div>
     </>
