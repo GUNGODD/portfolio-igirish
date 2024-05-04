@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { navigationItems } from "./Navbar";
 import Link from "next/link";
@@ -26,13 +32,19 @@ export const MobileMenu = () => {
                   location === item.href
                     ? "bg-muted"
                     : "hover:bg-muted hover:bg-opacity-75",
-                  "group flex items-center font-medium",
+                  "group flex items-center font-semibold",
                 )}
               >
                 {item.name}
               </Link>
             ))}
           </div>
+
+          <SheetFooter className="mt-5">
+            <SheetClose asChild>
+              <Button type="submit">Close</Button>
+            </SheetClose>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </>
