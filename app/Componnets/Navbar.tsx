@@ -1,4 +1,31 @@
+"use client";
+
+import {
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { NavigationMenu } from "@/components/ui/navigation-menu";
+import { NavigationMenuItem } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
+
+export const navigationItems = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "GuestBook",
+    href: "/guestBook",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+];
 
 export const Navbar = () => {
   return (
@@ -14,7 +41,22 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden sm:flex  justify-center  items-center col-span-6">
-          {" "}
+          <NavigationMenu>
+            <NavigationMenuList>
+              {navigationItems.map((items, index) => (
+                <NavigationMenuItem key={index}>
+                  <Link href={items} legacyBehavior passHref>
+                    <NavigationMenuList
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {" "}
+                      {items.name}
+                    </NavigationMenuList>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>{" "}
         </div>
       </div>
     </>
