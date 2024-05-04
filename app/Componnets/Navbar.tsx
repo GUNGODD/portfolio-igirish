@@ -3,13 +3,12 @@
 import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
+  NavigationMenuLink,
+  NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
-import {
-  NavigationMenuItem,
-  NavigationMenuLink,
-} from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const navigationItems = [
   {
@@ -31,6 +30,7 @@ export const navigationItems = [
 ];
 
 export const Navbar = () => {
+  const pathname = usePathname();
   return (
     <>
       <div className=" max-w-7xl mx-auto  px-4  md:px-8  py-5 grid grid-cols-12 ">
@@ -45,14 +45,15 @@ export const Navbar = () => {
         <div className="hidden sm:flex  justify-center  items-center col-span-6">
           <NavigationMenu>
             <NavigationMenuList>
-              {navigationItems.map((items, index) => (
+              {navigationItems.map((item, index) => (
                 <NavigationMenuItem key={index}>
-                  <Link href={items} legacyBehavior passHref>
+                  <Link href={item} legacyBehavior passHref>
                     <NavigationMenuLink
+                      active={pathname === item.href}
                       className={navigationMenuTriggerStyle()}
                     >
                       {" "}
-                      {items.name}
+                      {item.name}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -60,6 +61,8 @@ export const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>{" "}
         </div>
+
+        <div className="flex items-center justify-end md:col-span-3 col-span-6 "></div>
       </div>
     </>
   );
