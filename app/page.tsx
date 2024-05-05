@@ -1,5 +1,7 @@
-import Navbar from "./Componnets/Navbar";
-
 export default function Home() {
-  return <> </>;
+  return (
+    <>
+      <div className="w-full justify-center  text-center">hello</div>
+    </>
+  );
 }
