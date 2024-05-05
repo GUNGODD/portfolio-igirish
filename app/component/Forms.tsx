@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
@@ -14,6 +16,7 @@ export default function Forms() {
           name="message"
           placeholder="Your message"
         />
+        <SubmitButton />
       </form>
     </>
   );
