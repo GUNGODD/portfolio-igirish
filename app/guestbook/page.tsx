@@ -5,6 +5,7 @@ import { CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
+import { Form } from "../Components/Form";
 
 export default function GuestbookPage() {
   return (
@@ -22,7 +23,7 @@ mx-auto"
         <Card className="mt-10">
           <CardHeader className="flex flex-col w-full">
             <Label className="mb-1"> Message</Label>
-            {/*  components*/}
+            <GuestBookFrom />
           </CardHeader>
           <div
             className="flex flex-row gap-4 m-4 p-4
