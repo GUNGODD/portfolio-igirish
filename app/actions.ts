@@ -13,7 +13,7 @@ export async function postData(formData: FormData) {
   }
 
   const message = formData.get("message") as string;
-
+  console.log("Creating guestBookEntry with userId:", user.id);
   const data = await prisma.guestBookEntry.create({
     data: {
       userId: user.id,

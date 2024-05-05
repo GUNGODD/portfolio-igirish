@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
-import { postData } from "../actions";
 import { useRef } from "react";
+import { postData } from "../actions";
 
 export function Form() {
   const formRef = useRef<HTMLFormElement>(null);
