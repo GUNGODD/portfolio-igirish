@@ -19,3 +19,21 @@ export default function GuestBookPage() {
     </>
   );
 }
+
+function GuestBookForm() {
+  const user = false;
+
+  if (user) {
+    return (
+      <div>
+        <h1> hello user</h1>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-between gap-4 flex-col md:flex-row ">
+      <Input />
+    </div>
+  );
+}
