@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader } from "@/components/ui/card";
+import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Input } from "@/components/ui/input";
 export default function GuestBookPage() {
   return (
@@ -40,7 +41,10 @@ function GuestBookForm() {
     <>
       <div className="flex justify-between gap-4 flex-col md:flex-row ">
         <Input type="text" placeholder="Enter your Message" />
-        <Button>Sign in Free</Button>
+
+        <RegisterLink>
+          <Button> Sign in Free</Button>
+        </RegisterLink>
       </div>
     </>
   );
