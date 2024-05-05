@@ -35,7 +35,7 @@ async function GuestBookForm() {
   if (user) {
     return <Forms />;
   }
-
+ 
   return (
     <div className="flex justify-between gap-4 flex-col md:flex-row">
       <Input type="text" placeholder="Your Message..." />
