@@ -1,5 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardHeader } from "@/components/ui/card";
-
+import { Input } from "@/components/ui/input";
 export default function GuestBookPage() {
   return (
     <>
@@ -13,7 +14,10 @@ export default function GuestBookPage() {
           Sign my GuestBook
         </p>
         <Card className="mt-10">
-          <CardHeader className=" flex flex-col  w-full"></CardHeader>
+          <CardHeader className=" flex flex-col  w-full">
+            <label> Message</label>
+            <GuestBookForm />
+          </CardHeader>
         </Card>
       </section>
     </>
@@ -32,8 +36,11 @@ function GuestBookForm() {
   }
 
   return (
-    <div className="flex justify-between gap-4 flex-col md:flex-row ">
-      <Input />
-    </div>
+    <>
+      <div className="flex justify-between gap-4 flex-col md:flex-row ">
+        <Input type="text" placeholder="Enter your Message" />
+        <Button>Submit</Button>
+      </div>
+    </>
   );
 }
