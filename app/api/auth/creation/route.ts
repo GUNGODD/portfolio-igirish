@@ -30,11 +30,5 @@ export async function GET() {
     });
   }
 
-<<<<<<< HEAD
-  return NextResponse.redirect(
-    "https://portfolio-nextjs14-ruby.vercel.app/guestbook",
-  );
-=======
   return NextResponse.redirect("https://localhost:3000/guestbook");
->>>>>>> e49a45f8be4d6c75a1f02876bc15ed6e41d4d20a
 }
