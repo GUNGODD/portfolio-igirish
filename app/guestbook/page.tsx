@@ -15,7 +15,8 @@ export default function GuestBookPage() {
         </p>
         <Card className="mt-10">
           <CardHeader className=" flex flex-col  w-full">
-            <label> Message</label>
+            <label className="mb-2">Message</label>
+
             <GuestBookForm />
           </CardHeader>
         </Card>
@@ -39,7 +40,7 @@ function GuestBookForm() {
     <>
       <div className="flex justify-between gap-4 flex-col md:flex-row ">
         <Input type="text" placeholder="Enter your Message" />
-        <Button>Submit</Button>
+        <Button>Sign in Free</Button>
       </div>
     </>
   );
