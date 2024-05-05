@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader } from "@/components/ui/card";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Input } from "@/components/ui/input";
+import Forms from "../component/Forms";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 export default function GuestBookPage() {
   return (
     <>
@@ -26,26 +28,20 @@ export default function GuestBookPage() {
   );
 }
 
-function GuestBookForm() {
-  const user = false;
+async function GuestBookForm() {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
 
   if (user) {
-    return (
-      <div>
-        <h1> hello user</h1>
-      </div>
-    );
+    return <Forms />;
   }
 
   return (
-    <>
-      <div className="flex justify-between gap-4 flex-col md:flex-row ">
-        <Input type="text" placeholder="Enter your Message" />
-
-        <RegisterLink>
-          <Button> Sign in Free</Button>
-        </RegisterLink>
-      </div>
-    </>
+    <div className="flex justify-between gap-4 flex-col md:flex-row">
+      <Input type="text" placeholder="Your Message..." />
+      <RegisterLink>
+        <Button className="w-full">Sign for free</Button>
+      </RegisterLink>
+    </div>
   );
 }
