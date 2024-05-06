@@ -30,5 +30,5 @@ export async function GET() {
     });
   }
 
-  return NextResponse.redirect("https://localhost:3000/guestbook");
+  return NextResponse.redirect("https://portfolio-igirish.vercel.app/guestbook");
 }
